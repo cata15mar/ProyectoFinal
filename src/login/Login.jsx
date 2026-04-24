@@ -1,5 +1,14 @@
 import smile from "../assets/smile.png";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
+  const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+    e.preventDefault();
+    navigate("/home");
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50 p-6">
       <div className="w-full max-w-md bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
@@ -14,7 +23,7 @@ const Login = () => {
           <p className="text-slate-400 text-lg">Sign in to your account</p>
         </div>
 
-        <form className="space-y-10">
+        <form className="space-y-10"  onSubmit={handleLogin}>
           
           {/* Input de Nombre */}
           <div className="relative group">
